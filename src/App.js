@@ -1,24 +1,13 @@
-import { useState } from "react";
-import UseCounter from "./useCounter";
-import UseLocalStorage from "./useLocalStorage";
-import useUpdateLogger from "./useUpdateLogger";
+import Counter from "./components/Counter";
+import { Routes, Route } from "react-router-dom";
+import Home from "./pages/Home";
 
 function App() {
-  const { counter, increment } = UseCounter();
-  // useUpdateLogger(count);
-  // function handleAddition() {
-  //   setCount((cur) => cur + 1);
-  // }
   return (
-    <div className="flex flex-col p-8 items-center">
-      <span className="text-2xl">{counter}</span>
-      <button
-        className="rounded bg-slate-500 uppercase p-2 w-fit"
-        onClick={increment}
-      >
-        Add
-      </button>
-    </div>
+    <Routes>
+      <Route path="/" element={<Home />}></Route>
+      <Route path="/counter" element={<Counter />}></Route>
+    </Routes>
   );
 }
 
