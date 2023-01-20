@@ -6,6 +6,7 @@ const UseCounter = () => {
   return {
     counter,
     increment:()=> setCounter((cur) => cur + 1),
+    decrement: ()=>setCounter((cur) => cur - 1),
   };
 };
 
